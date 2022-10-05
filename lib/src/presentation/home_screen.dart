@@ -23,17 +23,49 @@ class HomeScreen extends StatelessWidget {
             onPressed: () => null,
           ),
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            gapH48,
-            const BalanceText(
-              balance: 753.02,
-            ),
-            gapH48,
-            Expanded(child: ListView())
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              gapH48,
+              const BalanceText(
+                balance: 753.02,
+              ),
+              gapH48,
+              ListView(
+                physics: const NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                children: [
+                  Container(
+                    color: Colors.amber,
+                    width: double.infinity,
+                    height: 100,
+                  ),
+                  Container(
+                    color: Colors.black,
+                    width: double.infinity,
+                    height: 100,
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    width: double.infinity,
+                    height: 100,
+                  ),
+                  Container(
+                    color: Colors.brown,
+                    width: double.infinity,
+                    height: 100,
+                  ),
+                  Container(
+                    color: Colors.deepOrange,
+                    width: double.infinity,
+                    height: 100,
+                  ),
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
