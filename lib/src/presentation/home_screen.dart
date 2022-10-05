@@ -3,6 +3,7 @@ import 'package:shacker/src/constants/app_sizes.dart';
 
 import '../common_widgets/balance_text.dart';
 import '../common_widgets/main_app_bar.dart';
+import '../common_widgets/operation_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -27,45 +28,31 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.start,
-            children: [
+            children: const [
               gapH48,
-              const BalanceText(
+              BalanceText(
                 balance: 753.02,
               ),
               gapH48,
-              ListView(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                children: [
-                  Container(
-                    color: Colors.amber,
-                    width: double.infinity,
-                    height: 100,
-                  ),
-                  Container(
-                    color: Colors.black,
-                    width: double.infinity,
-                    height: 100,
-                  ),
-                  Container(
-                    color: Colors.blue,
-                    width: double.infinity,
-                    height: 100,
-                  ),
-                  Container(
-                    color: Colors.brown,
-                    width: double.infinity,
-                    height: 100,
-                  ),
-                  Container(
-                    color: Colors.deepOrange,
-                    width: double.infinity,
-                    height: 100,
-                  ),
-                ],
-              )
+              OperationList(),
             ],
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.abc),
+              label: 'home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.access_time),
+              label: 'stats',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_tree_outlined),
+              label: 'config',
+            ),
+          ],
         ),
       ),
     );
