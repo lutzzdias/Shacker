@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shacker/src/constants/app_sizes.dart';
 
+import '../common_widgets/balance_text.dart';
 import '../common_widgets/main_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,6 +22,18 @@ class HomeScreen extends StatelessWidget {
             ),
             onPressed: () => null,
           ),
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            gapH48,
+            const BalanceText(
+              balance: 753.02,
+            ),
+            gapH48,
+            Expanded(child: ListView())
+          ],
         ),
       ),
     );
