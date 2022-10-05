@@ -3,6 +3,7 @@ import 'package:shacker/src/constants/app_sizes.dart';
 
 import '../common_widgets/balance_text.dart';
 import '../common_widgets/main_app_bar.dart';
+import '../common_widgets/nav_bar.dart';
 import '../common_widgets/operation_list.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -38,22 +39,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.abc),
-              label: 'home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.access_time),
-              label: 'stats',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_tree_outlined),
-              label: 'config',
-            ),
-          ],
-        ),
+        bottomNavigationBar: const NavBar(),
       ),
     );
   }
