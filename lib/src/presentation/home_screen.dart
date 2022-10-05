@@ -31,9 +31,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: const [
               gapH48,
-              BalanceText(
-                balance: 753.02,
-              ),
+              BalanceText(balance: 753.02),
               gapH48,
               OperationList(),
             ],
